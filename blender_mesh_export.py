@@ -5,7 +5,7 @@ me = bpy.context.object.data
 filepath = "/Users/diegorad/Documents/Averaging/test_mesh.dat"
 f = open(filepath, "w")
 
-f.write("%d %d %d\n" % (len(me.vertices),len(me.edges),len(me.polygons)))
+f.write("%d %d\n" % (len(me.vertices),len(me.polygons)))
 
 verts = [ bpy.context.object.matrix_world @ v.co for v in me.vertices ]
 ssvLines = [ " ".join([str(v) for v in co]) + "\n" for co in verts]
